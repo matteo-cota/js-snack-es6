@@ -11,15 +11,33 @@ const students = [
 
 // 1. Lista nomi studenti in maiuscolo
 let upperCaseNames = students.map(student => student.name.toUpperCase());
-console.log("Nomi studenti in maiuscolo:");
-console.log(upperCaseNames);
+
+// Stampa in pagina
+let upperCaseNamesList = document.getElementById("upperCaseNames");
+upperCaseNames.forEach(name => {
+    let listItem = document.createElement("li");
+    listItem.textContent = name;
+    upperCaseNamesList.appendChild(listItem);
+});
 
 // 2. Lista studenti con totale voti > 70
 let highGradesStudents = students.filter(student => student.grades > 70);
-console.log("Studenti con voti superiori a 70:");
-console.log(highGradesStudents);
+
+// Stampa in pagina
+let highGradesStudentsList = document.getElementById("highGradesStudents");
+highGradesStudents.forEach(student => {
+    let listItem = document.createElement("li");
+    listItem.textContent = `${student.name} - Voti: ${student.grades}`;
+    highGradesStudentsList.appendChild(listItem);
+});
 
 // 3. Lista studenti con totale voti > 70 e id > 120
 let specificStudents = students.filter(student => student.grades > 70 && student.id > 120);
-console.log("Studenti con voti superiori a 70 e id superiore a 120:");
-console.log(specificStudents);
+
+// Stampa in pagina
+let specificStudentsList = document.getElementById("specificStudents");
+specificStudents.forEach(student => {
+    let listItem = document.createElement("li");
+    listItem.textContent = `${student.name} - Voti: ${student.grades}, ID: ${student.id}`;
+    specificStudentsList.appendChild(listItem);
+});

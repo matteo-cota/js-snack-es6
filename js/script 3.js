@@ -8,4 +8,7 @@ const bikes = [
 const lightestBike = bikes.reduce((lightest, current) => current.weight < lightest.weight ? current : lightest);
 
 const { name, weight } = lightestBike;
-console.log(`The lightest bike is the ${name} with a weight of ${weight} kg.`);
+const resultText = `La Bici con il peso minore è ${name} con un peso di ${weight} kg.`;
+
+
+document.getElementById('result').innerText = resultText;

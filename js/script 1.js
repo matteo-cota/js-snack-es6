@@ -16,3 +16,11 @@ let placeholders = guests.map((guest, index) => {
 
 console.log("Segnaposto per Tavolo Vip:");
 console.log(placeholders);
+
+const placeholdersDiv = document.getElementById('placeholders');
+placeholders.forEach(placeholder => {
+    const placeholderElement = document.createElement('p');
+    placeholderElement.textContent = `Tavolo: ${placeholder.tableName}, Ospite: ${placeholder.guestName}, Posto: ${placeholder.place}`;
+    placeholdersDiv.appendChild(placeholderElement);
+});
+
